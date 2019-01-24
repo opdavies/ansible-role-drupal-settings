@@ -3,7 +3,8 @@
 // {{ ansible_managed }}
 
 {% for key, values in item.1.settings.databases.iteritems() %}
-$databases['{{ key }}']['default'] = [
+{% for target, values in values.iteritems() %}
+$databases['{{ key }}']['{{ target }}'] = [
   'driver' => '{{ values.driver }}',
   'host' => '{{ values.host }}',
   'database' => '{{ values.database }}',
@@ -11,6 +12,7 @@ $databases['{{ key }}']['default'] = [
   'password' => '{{ values.password }}',
 ];
 
+{% endfor %}
 {% endfor %}
 
 {% if item.1.settings.base_url is defined %}
