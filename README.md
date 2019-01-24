@@ -15,4 +15,9 @@ drupal_settings:
                 database: mydatabase
                 username: user
                 password: secret
+          trusted_hosts: # Optional
+            - '^example\.com$'
+            - '^.+\.example\.com$'
+            - '^example\.org$'
+            - '^.+\.example\.org$'
 ```
