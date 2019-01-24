@@ -8,8 +8,8 @@ drupal_settings:
         filename: settings.php # Optional, defaults to 'settings.php'
         settings:
           databases:
-            foo:
-              bar:
+            default: # The database key
+              default: # The database target
                 driver: mysql # Optional, defaults to 'mysql'
                 host: localhost # Optional, defaults to 'localhost'
                 database: mydatabase
