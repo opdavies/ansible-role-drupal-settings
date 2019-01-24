@@ -13,7 +13,7 @@ $databases['{{ name }}']['default'] = [
 
 {% endfor %}
 
-{% if item.1.settings.base_url %}
+{% if item.1.settings.base_url is defined %}
 $base_url = '{{ item.1.settings.base_url }}';
 {% endif %}
 
