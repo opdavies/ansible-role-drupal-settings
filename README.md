@@ -8,6 +8,7 @@ drupal_settings:
         filename: settings.php # Optional, defaults to 'settings.php'
         settings:
           base_url: https://www.example.com # Optional, Drupal 7
+          hash_salt: '' # Optional
           databases:
             default: # The database key
               default: # The database target
