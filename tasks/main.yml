@@ -1,0 +1,8 @@
+---
+- name: Create settings files
+  template:
+    src: settings.php.j2
+    dest: '{{ item.0.project_dir }}/shared/web/sites/{{ item.1.name|default(''default'') }}/local.settings.php'
+  with_subelements:
+    - '{{ drupal_settings }}'
+    - sites

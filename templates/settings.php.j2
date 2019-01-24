@@ -1,0 +1,22 @@
+<?php
+
+// {{ ansible_managed }}
+
+{% for name, values in item.1.settings.databases.iteritems() %}
+$databases['{{ name }}']['default'] = [
+  'driver' => '{{ values.driver }}',
+  'host' => '{{ values.host }}',
+  'database' => '{{ values.database }}',
+  'username' => '{{ values.username }}',
+  'password' => '{{ values.password }}',
+];
+
+{% endfor %}
+
+{% if item.1.settings.base_url %}
+$base_url = '{{ item.1.settings.base_url }}';
+{% endif %}
+
+{% if item.1.settings.extra_parameters is defined %}
+  {{ item.1.settings.extra_parameters|indent(0) }}
+{% endif %}
