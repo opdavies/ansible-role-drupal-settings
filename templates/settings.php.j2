@@ -5,8 +5,8 @@
 {% for key, values in item.1.settings.databases.iteritems() %}
 {% for target, values in values.iteritems() %}
 $databases['{{ key }}']['{{ target }}'] = [
-  'driver' => '{{ values.driver }}',
-  'host' => '{{ values.host }}',
+  'driver' => '{{ values.driver|default('mysql') }}',
+  'host' => '{{ values.host|default('localhost') }}',
   'database' => '{{ values.database }}',
   'username' => '{{ values.username }}',
   'password' => '{{ values.password }}',
