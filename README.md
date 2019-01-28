@@ -15,7 +15,7 @@ drupal_settings:
                 database: mydatabase
                 username: user
                 password: secret
-          trusted_hosts: # Optional
+          trusted_hosts: # Optional, Drupal 8
             - '^example\.com$'
             - '^.+\.example\.com$'
             - '^example\.org$'
