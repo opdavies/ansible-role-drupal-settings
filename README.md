@@ -17,6 +17,8 @@ drupal_settings:
                 database: mydatabase
                 username: user
                 password: secret
+          config_directories: # Optional, Drupal 8
+            sync: path/to/config
           trusted_hosts: # Optional, Drupal 8
             - '^example\.com$'
             - '^.+\.example\.com$'

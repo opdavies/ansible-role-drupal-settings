@@ -23,6 +23,12 @@ $base_url = '{{ item.1.settings.base_url }}';
 $settings['hash_salt'] = '{{ item.1.settings.hash_salt }}';
 {% endif %}
 
+{% if item.1.settings.config_directories is defined %}
+{% for name, value in item.1.settings.config_directories.iteritems() %}
+$cconfig_directories['{{ name }}'] = '{{ value }}';
+{% endfor %}
+{% endif %}
+
 {% if item.1.settings.trusted_hosts is defined %}
 $settings['trusted_host_patterns'] = array(
 {% for host in item.1.settings.trusted_hosts %}
