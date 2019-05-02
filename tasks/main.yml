@@ -1,2 +1,8 @@
 ---
-# tasks file for opdavies.drupal-settings
+- name: Ensure that Drupal site directories are present
+  file:
+    state: directory
+    path: '{{ item.0.root }}/sites/{{ item.1.name|default("default") }}'
+  with_subelements:
+    - '{{ drupal_settings }}'
+    - sites
