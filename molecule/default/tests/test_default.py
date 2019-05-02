@@ -12,7 +12,7 @@ def test_drupal_site_directory_exists(host):
     assert directory.is_directory
 
 def test_drupal_settings_file_exists(host):
-    file = host.file('/var/www/test/sites/default/settings.php')
+    file = host.file('/var/www/test/sites/default/settings.test.php')
 
     assert file.exists
     assert file.is_file
