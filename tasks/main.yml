@@ -6,3 +6,11 @@
   with_subelements:
     - '{{ drupal_settings }}'
     - sites
+
+- name: Ensure that Drupal settings files are present
+  template:
+    src: settings.php.j2
+    dest: '{{ item.0.root }}/sites/{{ item.1.name|default("default") }}/settings.php
+  with_subelements:
+    - '{{ drupal_settings }}'
+    - sites
