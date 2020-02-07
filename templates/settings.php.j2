@@ -2,8 +2,8 @@
 
 // {{ ansible_managed }}
 
-{% for key, values in item.1.settings.databases.iteritems() %}
-{% for target, values in values.iteritems() %}
+{% for key, values in item.1.settings.databases.items() %}
+{% for target, values in values.items() %}
 $databases['{{ key }}']['{{ target }}'] = array(
   'driver' => '{{ values.driver|default('mysql') }}',
   'host' => '{{ values.host|default('localhost') }}',
@@ -24,8 +24,8 @@ $settings['hash_salt'] = '{{ item.1.settings.hash_salt }}';
 {% endif %}
 
 {% if item.1.settings.config_directories is defined %}
-{% for name, value in item.1.settings.config_directories.iteritems() %}
 $cconfig_directories['{{ name }}'] = '{{ value }}';
+{% for name, value in item.1.settings.config_directories.items() %}
 {% endfor %}
 {% endif %}
 
