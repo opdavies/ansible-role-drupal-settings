@@ -1,4 +1,13 @@
 ---
+- name: Ensure directory exists
+  file:
+    state: directory
+    path: '{{ item.0.drupal_root }}/sites/{{ item.1.name|default("default") }}'
+  with_subelements:
+    - '{{ drupal_settings }}'
+    - sites
+  no_log: true
+
 - name: Create settings files
   template:
     src: settings.php.j2
@@ -6,4 +15,4 @@
   with_subelements:
     - '{{ drupal_settings }}'
     - sites
-  no_log: True
+  no_log: true
