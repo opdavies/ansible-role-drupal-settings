@@ -24,8 +24,8 @@ $settings['hash_salt'] = '{{ item.1.settings.hash_salt }}';
 {% endif %}
 
 {% if item.1.settings.config_directories is defined %}
-$cconfig_directories['{{ name }}'] = '{{ value }}';
 {% for name, value in item.1.settings.config_directories.items() %}
+$config_directories['{{ name }}'] = '{{ value }}';
 {% endfor %}
 {% endif %}
 
