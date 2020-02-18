@@ -1,5 +1,9 @@
 # Ansible Role: Drupal settings
 
+A role for automatically generating `settings.php` files for Drupal 7 and 8 applications.
+
+## Example
+
 ```yaml
 drupal_settings:
   - drupal_root: /var/www/web
