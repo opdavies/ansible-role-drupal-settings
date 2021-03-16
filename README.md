@@ -18,6 +18,7 @@ drupal_settings:
               default: # The database target
                 driver: mysql # Optional, defaults to 'mysql'
                 host: localhost # Optional, defaults to 'localhost'
+                port: 3306 # Optional
                 database: mydatabase
                 username: user
                 password: secret
